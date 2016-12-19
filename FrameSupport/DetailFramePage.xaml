@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="FrameSupport.DetailFramePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:FrameSupport"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <RichEditBox
+            Width="200"
+            Height="50"
+            PlaceholderText="{x:Bind myViewObject.MyText, Mode=OneWay}" />
+    </Grid>
+</Page>
