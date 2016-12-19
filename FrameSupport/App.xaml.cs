@@ -32,6 +32,23 @@ namespace FrameSupport
             this.Suspending += OnSuspending;
         }
 
+        protected override void OnActivated(IActivatedEventArgs args)
+        {
+            if (args.Kind == ActivationKind.Protocol)
+            {
+                ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs;
+                // TODO: Handle URI activation
+                // The received URI is eventArgs.Uri.AbsoluteUri
+                Frame frame=Window.Current.Content as Frame;
+                    // When the navigation stack isn't restored navigate to the first page,
+                    // configuring the new page by passing required information as a navigation
+                    // parameter
+                frame.Navigate(typeof(MainPage), typeof(TestPage));
+                // Ensure the current window is active
+                Window.Current.Activate();
+            }
+        }
+
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.

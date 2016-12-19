@@ -30,6 +30,5 @@ namespace FrameSupport
             myViewObject.MyText = "haha";
         }
         public MyViewObject myViewObject { get; set; }
-
     }
 }
